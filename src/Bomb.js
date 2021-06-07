@@ -1,14 +1,22 @@
-import React,{useState} from 'react';
+import React from 'react';
 
-export default function ({initialCount}) {
+class Bomb extends React.Component {
 
-const [secondsLeft,setSecondLeft]=useState(initialCount)
+  constructor(props) {
+    super() 
 
- 
-    const message = secondsLeft === 0 ? 'Boom!' : `${secondsLeft} seconds left before I go boom!`;
+    this.state = {
+      secondsLeft: props.initialCount
+    }
+  }
+
+  render() {
+    const message = this.state.secondsLeft === 0 ? 'Boom!' : `${this.state.secondsLeft} seconds left before I go boom!`;
 
     return (
       <div>{message}</div>
     )
   }
+}
 
+export default Bomb;

@@ -1,9 +1,20 @@
-import React,{useState} from 'react';
+import React from 'react';
 
-export default function () {
+class ImageSlider extends React.Component {
 
-const [currentSlideIndex,setCurrentSlideIndex]=useState(0);
+  constructor() {
+    super() 
 
-  return <h1>I am on slide {currentSlideIndex}</h1>;
-    
+    this.state = {
+      currentSlideIndex: 0
+    }
+  }
+
+  render() {
+    return (
+      <h1>I am on slide {this.state.currentSlideIndex}</h1>
+    )
+  }
 }
+
+export default ImageSlider;
